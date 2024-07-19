@@ -1,0 +1,5 @@
+"custnum ","LASTNAME ","FIRSTNAME ","COMPANY ","ADDR                      ","ADDR2 ","CITY      ","STATE ","ZIPCODE ","PHONE          ","PHONE2         ","EMAIL              ",
+"   1051 ","JOE      ","COOL      ","        ","26 WALNUT HILL DR         ","      ","FREEPORT  ","ME    ",14032,"(555) 350-1742 ","(   )    -     ","joe.cool@gmail.com ",
+"   1274 ","OLIVE    ","OIL       ","        ","83 RINGROSE RD            ","      ","WORCESTER ","MA    ",40320,"(555) 865-4521 ","(555) 865-4521 ","ooil@aol.com       ",
+"   1281 ","CHARLIE  ","BROWN     ","        ","365 LOWER FLYING POINT RD ","      ","WORCESTER ","MA    ",15080,"(555) 865-9544 ","               ","cbrown@comcast.net ",
+,,,,,,,,,,,,

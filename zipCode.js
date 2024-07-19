@@ -16,15 +16,15 @@ fs.readFile(inputFile, 'utf8', (err, csvData) => {
       header: true,
       complete: function(results) {
           // Modify the specific column
-          const columnName = 'ZIPCODE'; // Replace with your column name
+          const columnName = 'ZIPCODE '; // Replace with your column name
           const modifiedData = results.data.map(row => {
               if (row[columnName]) {
                   row[columnName] = modifyValue(row[columnName]); // Modify the column value
               }
               return row;
-             
+
           });
-          console.log(modifiedData[columnName]);
+          
 
             // Convert back to CSV
             const csv = Papa.unparse(modifiedData);
@@ -41,37 +41,13 @@ fs.readFile(inputFile, 'utf8', (err, csvData) => {
     });
 });
 
+function modifyValue(value) {
+  // Example modification: Append a string to the existing value
+  let strippedZip = value.trim();
 
-
-
-
-/*
-let testObject = {
-  "zipCodes" : ["06255","80124", "06266","06277"]
-}
-
-for (let key in testObject) {
-  // New array for zipcodes after moving 0 to the back
-  const newZip = [];
-
-  //Checking if key has an array
-  if (Array.isArray(testObject[key])) {
-    for (let i = 0; i < testObject[key].length; i++) {
-
-      // getting each zipcode
-       const zip = testObject[key][i];
-       
-      // Checking if first number is 0
-       if(zip[0] == 0) {
-        const zipCode = zip.substring(1)
-        const zipCodes = zipCode + '0';
-        newZip.push(zipCodes);
-       }
-       else {
-        newZip.push(zip);
-       }
-    }
+  // checking if first number in zip code starts with 0
+  if (strippedZip.startsWith('0')) {
+    strippedZip = strippedZip.substring(1) + 0;
   }
-  console.log(newZip);
+  return strippedZip;
 }
-*/
