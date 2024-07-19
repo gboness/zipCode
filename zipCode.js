@@ -16,10 +16,10 @@ fs.readFile(inputFile, 'utf8', (err, csvData) => {
       header: true,
       complete: function(results) {
           // Modify the specific column
-          const columnName = 'ZIPCODE '; // Replace with your column name
+          const columnName = 'ZIPCODE ';
           const modifiedData = results.data.map(row => {
               if (row[columnName]) {
-                  row[columnName] = modifyValue(row[columnName]); // Modify the column value
+                  row[columnName] = modifyValue(row[columnName]);
               }
               return row;
 
